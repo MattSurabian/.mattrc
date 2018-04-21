@@ -1,0 +1,14 @@
+alias serve='python -m http.server'
+alias idea='idea > /dev/null 2>&1 &'
+alias ls='ls --color=auto'
+alias docker-prune='docker rmi -f $(docker images -f "dangling=true" -q)'
+
+if [ ! -z "$(grep Ubuntu /etc/os-release)" ]; then
+  # Ubuntu
+  alias upgrayedd='sudo apt-get update && sudo apt-get upgrade'
+else
+  # Arch Linux
+  alias upgrayedd='yaourt -Syua'
+  alias copy='xclip -selection c -i' 
+fi
+
