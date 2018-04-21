@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+source $DIR/colors
+source $DIR/git
+
+PS1="\h:\W\$(git_info) \[$RESET\]\n\u\$ "
